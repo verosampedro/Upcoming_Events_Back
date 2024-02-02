@@ -1,8 +1,7 @@
-package VeroSlaves.Upcoming_Events_Back.events;
+package veroslaves.upcoming_events_back.events;
 
 import java.util.Date;
 
-import VeroSlaves.Upcoming_Events_Back.cities.City;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import veroslaves.upcoming_events_back.cities.City;
 
 @Entity
 @Table(name = "events")
