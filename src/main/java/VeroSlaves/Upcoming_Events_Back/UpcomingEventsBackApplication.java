@@ -1,4 +1,4 @@
-package VeroSlaves.Upcoming_Events_Back;
+package veroslaves.upcoming_events_back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

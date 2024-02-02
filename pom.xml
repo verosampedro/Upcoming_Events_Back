@@ -8,10 +8,10 @@
 		<version>3.2.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>Vero-Slaves</groupId>
-	<artifactId>Upcoming_Events_Back</artifactId>
+	<groupId>vero-slaves</groupId>
+	<artifactId>upcoming_events_back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Upcoming_Events_Back</name>
+	<name>upcoming_events_back</name>
 	<description>Project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>

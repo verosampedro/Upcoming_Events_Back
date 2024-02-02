@@ -1,8 +1,10 @@
-package VeroSlaves.Upcoming_Events_Back;
+package veroslaves.upcoming_events_back;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
+import veroslaves.upcoming_events_back.prueba;
 
 public class pruebaTests {
     @Test

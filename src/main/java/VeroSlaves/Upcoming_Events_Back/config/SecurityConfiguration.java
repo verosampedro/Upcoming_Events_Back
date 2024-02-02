@@ -1,4 +1,4 @@
-package VeroSlaves.Upcoming_Events_Back.config;
+package veroslaves.upcoming_events_back.config;
 
 import java.util.Arrays;
 
