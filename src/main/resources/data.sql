@@ -1,0 +1,1 @@
+INSERT INTO cities(id_city, city_name) VALUES (default, 'Gijón');
