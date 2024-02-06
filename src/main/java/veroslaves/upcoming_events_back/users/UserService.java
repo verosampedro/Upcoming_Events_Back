@@ -2,6 +2,7 @@ package veroslaves.upcoming_events_back.users;
 
 import java.util.List;
 
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import veroslaves.upcoming_events_back.Exceptions.UserNotFoundException;
@@ -28,6 +29,12 @@ public class UserService {
         return user;
     }
 
-    
+    public User save(@NonNull User type) {
+        User newUser = new User();
+
+        repository.save(newUser);
+        return newUser;
+    }
+
 
 }
