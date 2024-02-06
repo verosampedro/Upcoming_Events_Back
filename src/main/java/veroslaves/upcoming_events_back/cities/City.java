@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 import veroslaves.upcoming_events_back.events.Event;
 
 @Entity
-@Table(name = "types")
+@Table(name = "cities")
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
