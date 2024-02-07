@@ -3,7 +3,6 @@ package veroslaves.upcoming_events_back.users;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.springframework.boot.autoconfigure.task.TaskExecutionProperties.Simple;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,13 +13,11 @@ public class SecurityUser implements UserDetails {
     
     User user;
 
-
-    
-public SecurityUser(User user) {
+    public SecurityUser(User user) {
         this.user = user;
     }
 
-}
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -64,3 +61,4 @@ public SecurityUser(User user) {
     public boolean isEnabled() {
         return true;
     }
+}
