@@ -5,8 +5,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import veroslaves.upcoming_events_back.exceptions.UserNotFoundException;
-
 @Service
 public class JpaUserDetailService implements UserDetailsService{
 
