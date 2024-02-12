@@ -43,7 +43,7 @@ public class UserController {
     @PutMapping(path = "/eventSignUp/{id}")
     public ResponseEntity<User> addEventToUser(@PathVariable("id") Long id) throws Exception {
 
-        User updatedUser = service.addEventToUser(id);
+        User updatedUser = service.updateUserEvents(id);
 
         return ResponseEntity.status(200).body(updatedUser);
     }
