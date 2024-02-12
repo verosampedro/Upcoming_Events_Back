@@ -1,6 +1,9 @@
 package veroslaves.upcoming_events_back.events;
 
 import java.util.Date;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,9 +12,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import veroslaves.upcoming_events_back.cities.City;
+import veroslaves.upcoming_events_back.users.User;
 
 @Entity
 @Table(name = "events")
@@ -44,11 +49,15 @@ public class Event {
     @JoinColumn(name = "city_id")
     private City city;
 
+    @JsonIgnore
+    @ManyToMany(mappedBy = "events")
+    Set<User> users;
+
     public Event() {
     }
 
     public Event(String event_title, Date start_date, Date finish_date, byte[] event_image, Long max_participants,
-            String description, City city) {
+            String description, City city, Set<User> users) {
         this.event_title = event_title;
         this.start_date = start_date;
         this.finish_date = finish_date;
@@ -56,6 +65,7 @@ public class Event {
         this.max_participants = max_participants;
         this.description = description;
         this.city = city;
+        this.users = users;
     }
 
     public Long getId() {
@@ -122,5 +132,12 @@ public class Event {
         this.city = city;
     }
 
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
     
 }
