@@ -31,8 +31,8 @@ public class Event {
     private Date finish_date;
 
     @Lob
-    @Column(name = "event_image", columnDefinition="BLOB")
-    private byte[] event_image;
+    @Column(name = "event_image")
+    private String event_image;
 
     @Column
     private Long max_participants;
@@ -47,7 +47,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(String event_title, Date start_date, Date finish_date, byte[] event_image, Long max_participants,
+    public Event(String event_title, Date start_date, Date finish_date, String event_image, Long max_participants,
             String description, City city) {
         this.event_title = event_title;
         this.start_date = start_date;
@@ -90,11 +90,11 @@ public class Event {
         this.finish_date = finish_date;
     }
 
-    public byte[] getEvent_image() {
+    public String getEvent_image() {
         return event_image;
     }
 
-    public void setEvent_image(byte[] event_image) {
+    public void setEvent_image(String event_image) {
         this.event_image = event_image;
     }
 
