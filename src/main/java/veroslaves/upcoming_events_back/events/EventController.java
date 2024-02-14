@@ -38,4 +38,5 @@ public class EventController {
 
         return ResponseEntity.status(HttpStatusCode.valueOf(200)).body(event);
     }
+    
 }
