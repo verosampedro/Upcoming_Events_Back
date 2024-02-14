@@ -2,6 +2,7 @@ package veroslaves.upcoming_events_back.events;
 
 import java.util.List;
 
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import veroslaves.upcoming_events_back.interfaces.IGenericFullService;
@@ -31,4 +32,11 @@ public class EventService implements IGenericFullService <Event> {
 
         return event;
     } */
+
+    public Event save(@NonNull Event type) {
+        Event newEvent = new Event();
+
+        eventRepository.save(newEvent);
+        return newEvent;
+    }
 }
