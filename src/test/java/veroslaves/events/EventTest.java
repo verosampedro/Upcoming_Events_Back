@@ -32,14 +32,14 @@ public class EventTest {
 
         // Date event_start = new Date;
         // Date event_end = new Date();
-        event = new Event("Danzas al aire libre", event_start, event_end, null, 10L, "Muy interesante. Pero muy, muy...", event_city);
+        event = new Event("Danzas al aire libre", event_start, event_end, null, 10L, "Muy interesante. Pero muy, muy...", event_city, null);
         event.setId(1L);
     }
 
     @Test
     void testEventHas8Attributes() {
         Field[] fields = event.getClass().getDeclaredFields();
-        assertThat(fields.length, is(8));
+        assertThat(fields.length, is(9));
     }
 
     @Test
