@@ -30,4 +30,10 @@ public class CityService implements IGenericFullService<City> {
         return city;
     }
 
+    @Override
+    public City save(City obj) {
+        
+        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    }
+
 }
