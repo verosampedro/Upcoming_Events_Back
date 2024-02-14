@@ -32,9 +32,9 @@ public class City {
     public City() {
     }
 
-    public City(String city_name, Set<Event> events) {
+    public City(String city_name) {
         this.city_name = city_name;
-        this.events = events;
+        
     }
 
     public Long getId() {
