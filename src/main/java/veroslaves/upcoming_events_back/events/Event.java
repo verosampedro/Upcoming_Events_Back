@@ -3,7 +3,7 @@ package veroslaves.upcoming_events_back.events;
 import java.util.Date;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -49,7 +49,7 @@ public class Event {
     @JoinColumn(name = "city_id")
     private City city;
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToMany(mappedBy = "events")
     Set<User> users;
 
