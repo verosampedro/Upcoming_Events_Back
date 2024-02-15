@@ -2,6 +2,8 @@ package veroslaves.upcoming_events_back.events;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import veroslaves.upcoming_events_back.cities.City;
 
 @Entity
@@ -44,11 +47,17 @@ public class Event {
     @JoinColumn(name = "city_id")
     private City city;
 
+    @Transient
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String cityName;
+
     public Event() {
     }
 
+   
+
     public Event(String event_title, Date start_date, Date finish_date, String event_image, Long max_participants,
-            String description, City city) {
+            String description, City city, String cityName) {
         this.event_title = event_title;
         this.start_date = start_date;
         this.finish_date = finish_date;
@@ -56,7 +65,10 @@ public class Event {
         this.max_participants = max_participants;
         this.description = description;
         this.city = city;
+        this.cityName = cityName;
     }
+
+
 
     public Long getId() {
         return id;
@@ -120,6 +132,17 @@ public class Event {
 
     public void setCity(City city) {
         this.city = city;
+    }
+
+
+
+    public String getCityName() {
+        return cityName;
+    }
+
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
     
