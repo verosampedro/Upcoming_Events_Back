@@ -37,10 +37,10 @@ public class EventService implements IGenericFullService <Event> {
         return event;
     } */
 
-    public Event save(Event event){
+    public Event save(Event newEvent){
        
-        eventRepository.save(event);
-        return event;
+        eventRepository.save(newEvent);
+        return newEvent;
     }
 
 
