@@ -4,18 +4,23 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import veroslaves.upcoming_events_back.cities.City;
+import veroslaves.upcoming_events_back.cities.CityRepository;
 import veroslaves.upcoming_events_back.interfaces.IGenericFullService;
 
 @Service
 public class EventService implements IGenericFullService <Event> {
     
     EventRepository eventRepository;
+    CityRepository cityRepository;
 
     
 
-    public EventService(EventRepository eventRepository) {
-        this.eventRepository = eventRepository;
+    
 
+    public EventService(EventRepository eventRepository, CityRepository cityRepository) {
+        this.eventRepository = eventRepository;
+        this.cityRepository = cityRepository;
     }
 
     public List<Event> getAll() {
@@ -37,10 +42,14 @@ public class EventService implements IGenericFullService <Event> {
         return event;
     } */
 
-    public Event save(Event newEvent){
+    public Event save(Event event){
+        City city = cityRepository.findByNameOfCity(event.getCityName()).orElse(new City(event.getCityName()));
+        cityRepository.save(city);
+
+        event.setCity(city);
        
-        eventRepository.save(newEvent);
-        return newEvent;
+        eventRepository.save(event);
+        return event;
     }
 
 
