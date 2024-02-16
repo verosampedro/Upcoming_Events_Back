@@ -49,8 +49,9 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("ADMIN","USER")
                         .requestMatchers(HttpMethod.GET, endpoint + "/users").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, endpoint + "/cities").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, endpoint + "/cities").permitAll()
                         .requestMatchers(HttpMethod.GET, endpoint + "/events").permitAll()
+                        .requestMatchers(HttpMethod.POST, endpoint + "/events").permitAll()
                         .anyRequest().authenticated())
                 .userDetailsService(jpaUserDetailService)
                 .httpBasic(Customizer.withDefaults())
