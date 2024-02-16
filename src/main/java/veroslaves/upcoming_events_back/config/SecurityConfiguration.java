@@ -46,20 +46,12 @@ public class SecurityConfiguration {
                 .logout(out -> out
                         .logoutUrl(endpoint + "/logout")
                         .deleteCookies("JSSESIONID"))
-<<<<<<< HEAD
-                // .authorizeHttpRequests(auth -> auth
-                //         .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("ADMIN","USER")
-                //         .requestMatchers(HttpMethod.GET, endpoint + "/users").hasRole("ADMIN")
-                //         .requestMatchers(HttpMethod.GET, endpoint + "/events").permitAll()
-                //         .anyRequest().authenticated())
-=======
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, endpoint + "/login").hasAnyRole("ADMIN","USER")
                         .requestMatchers(HttpMethod.GET, endpoint + "/users").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, endpoint + "/users/eventSignUp/{id}").hasAnyRole("ADMIN","USER")
                         .requestMatchers(HttpMethod.GET, endpoint + "/events").permitAll()
                         .anyRequest().authenticated())
->>>>>>> 4dee67a52240942406098a42b1ba23a7f618c814
                 .userDetailsService(jpaUserDetailService)
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
