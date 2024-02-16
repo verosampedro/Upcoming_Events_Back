@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import veroslaves.upcoming_events_back.events.Event;
 import veroslaves.upcoming_events_back.roles.Rol;
 
 @Entity
@@ -29,6 +30,10 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "roles_users", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     Set<Rol> roles;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "events_users", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "event_id"))
+    Set<Event> events;
 
     public User() {
     }
@@ -69,5 +74,13 @@ public class User {
     public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
-    
+
+    public Set<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Set<Event> events) {
+        this.events = events;
+    }
+
 }
