@@ -23,7 +23,7 @@ public class City {
     private Long id;
 
     @Column
-    private String city_name;
+    private String nameOfCity;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "city", cascade=CascadeType.ALL)
@@ -32,9 +32,9 @@ public class City {
     public City() {
     }
 
-    public City(String city_name, Set<Event> events) {
-        this.city_name = city_name;
-        this.events = events;
+    public City(String nameOfCity) {
+        this.nameOfCity = nameOfCity;
+        
     }
 
     public Long getId() {
@@ -45,12 +45,12 @@ public class City {
         this.id = id;
     }
 
-    public String getCity_name() {
-        return city_name;
+    public String getNameOfCity() {
+        return nameOfCity;
     }
 
-    public void setCity_name(String city_name) {
-        this.city_name = city_name;
+    public void setNameOfCity(String nameOfCity) {
+        this.nameOfCity = nameOfCity;
     }
 
     public Set<Event> getEvents() {
