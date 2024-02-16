@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import veroslaves.upcoming_events_back.interfaces.IGenericFullService;
+import veroslaves.upcoming_events_back.interfaces.IGenericLimitedService;
 
 @Service
-public class CityService implements IGenericFullService<City> {
+public class CityService implements IGenericLimitedService<City> {
 
     CityRepository repository;
 
