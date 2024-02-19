@@ -56,8 +56,9 @@ public class UserService {
 
         Set<Event> userEvents = updatingUser.getEvents();
 
-        if (!userEvents.contains(newEvent) && userEvents.size() < newEvent.getMax_participants()) {
+        if (!userEvents.contains(newEvent) && newEvent.getUsers().size() < newEvent.getMax_participants()) {
             userEvents.add(newEvent);
+            System.out.println(newEvent.getUsers());
         } else if (userEvents.contains(newEvent)) {
             userEvents.remove(newEvent);
         } else {
