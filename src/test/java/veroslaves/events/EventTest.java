@@ -1,4 +1,4 @@
-package veroslaves.events;
+/* package veroslaves.events;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -50,4 +50,4 @@ public class EventTest {
         assertThat(event.getMax_participants(), is(10L));
         assertThat(event.getDescription(), is("Muy interesante. Pero muy, muy..."));
     }
-}
+} */

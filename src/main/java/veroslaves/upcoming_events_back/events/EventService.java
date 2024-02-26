@@ -56,6 +56,9 @@ public class EventService implements IGenericFullService <Event> {
     public Event update(Long id, Event event) throws Exception {
         
         Event updatingEvent = eventRepository.findById(id).orElseThrow(() -> new EventNotFoundException("Event not found"));
+
+        City city = cityRepository.findByNameOfCity(event.getCityName()).orElse(new City(event.getCityName()));
+        cityRepository.save(city);
         
         updatingEvent.setId(event.getId());
         updatingEvent.setEvent_title(event.getEvent_title());
@@ -64,7 +67,7 @@ public class EventService implements IGenericFullService <Event> {
         updatingEvent.setEvent_image(event.getEvent_image());
         updatingEvent.setMax_participants(event.getMax_participants());
         updatingEvent.setDescription(event.getDescription());
-        updatingEvent.setCity(event.getCity());
+        updatingEvent.setCity(city);
 
         Event updatedEvent = eventRepository.save(updatingEvent);
         
