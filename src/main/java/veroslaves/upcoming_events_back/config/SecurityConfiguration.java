@@ -53,6 +53,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.GET, endpoint + "/cities").permitAll()
                         .requestMatchers(HttpMethod.GET, endpoint + "/events").permitAll()
                         .requestMatchers(HttpMethod.POST, endpoint + "/events").permitAll()
+                        .requestMatchers(HttpMethod.POST, endpoint + "/users").permitAll()
                         .anyRequest().authenticated())
                 .userDetailsService(jpaUserDetailService)
                 .httpBasic(Customizer.withDefaults())
