@@ -39,8 +39,8 @@ public class UserService {
         return user;
     }
 
-    public User save(@NonNull User type) {
-        User newUser = new User();
+    public User save(@NonNull User user) {
+        User newUser = user;
 
         repository.save(newUser);
         return newUser;
