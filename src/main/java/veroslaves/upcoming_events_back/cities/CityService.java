@@ -30,6 +30,14 @@ public class CityService implements IGenericLimitedService<City> {
         return city;
     }
 
+    public void deleteById(Long id) throws Exception {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+        } else {
+            throw new CityNotFoundException("City not found");
+        }
+    }
+
     @Override
     public City save(City obj) {
         

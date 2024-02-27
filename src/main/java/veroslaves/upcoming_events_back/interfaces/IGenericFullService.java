@@ -8,7 +8,6 @@ public interface IGenericFullService<T> {
     public List<T> getAll();
     public T getById(Long id) throws Exception;
     public T save(T obj);
-    
-    // public T getByEvent_title(String title) throws Exception;
     public Event update(Long id, Event event) throws Exception;
+    public void deleteById(Long id) throws Exception;
 }
