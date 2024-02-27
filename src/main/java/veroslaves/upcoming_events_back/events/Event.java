@@ -3,6 +3,7 @@ package veroslaves.upcoming_events_back.events;
 import java.util.Date;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Column;
@@ -31,9 +32,11 @@ public class Event {
     private String event_title;
 
     @Column
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date start_date;
 
     @Column
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date finish_date;
 
     @Lob
