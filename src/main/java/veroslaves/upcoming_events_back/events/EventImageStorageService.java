@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class EventImageStorageService {
-    private final String uploadDir = "src/main/resources/static/";
+    private final String uploadDir = "src/main/resources/static/images/";
     
     public String storeFile(MultipartFile file) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
