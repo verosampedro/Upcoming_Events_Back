@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import veroslaves.upcoming_events_back.prueba;
-
 public class pruebaTests {
     @Test
     void testGetX() {
