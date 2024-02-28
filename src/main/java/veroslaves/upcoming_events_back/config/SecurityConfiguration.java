@@ -54,6 +54,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.GET, endpoint + "/events").permitAll()
                         .requestMatchers(HttpMethod.POST, endpoint + "/events").permitAll()
                         .requestMatchers(HttpMethod.POST, endpoint + "/images").permitAll()
+                        .requestMatchers(HttpMethod.POST, endpoint + "/users").permitAll()
                         .requestMatchers(HttpMethod.GET, endpoint + "/images").permitAll()
                         .anyRequest().authenticated())
                 .userDetailsService(jpaUserDetailService)
